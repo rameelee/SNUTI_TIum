@@ -123,6 +123,17 @@
         }
         .archive-table tr:last-child td { border-bottom: none; }
 
+        /* [추가] 아카이브용 미니 프로필 사진 스타일 */
+        .profile-thumb {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; /* 둥글게 */
+            object-fit: cover;
+            background-color: #eee;
+            border: 1px solid #ddd;
+            vertical-align: middle;
+        }
+
         footer { background: #111; color: #888; padding: 40px 5%; text-align: center; margin-top: 50px; }
     </style>
 </head>
@@ -260,32 +271,36 @@
                 <table class="archive-table">
                     <thead>
                         <tr>
-                            <th style="width: 20%;">이름</th>
-                            <th style="width: 30%;">당시 직책</th>
-                            <th>전공/학번</th>
+                            <th style="width: 10%;">사진</th> <th style="width: 20%;">이름</th>
+                            <th style="width: 20%;">당시 직책</th>
+                            <th style="width: 25%;">전공/학번</th>
                             <th>비고</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
+                            <td><img src="https://via.placeholder.com/40" alt="사진" class="profile-thumb"></td>
                             <td>홍길동</td>
                             <td><strong>회장</strong></td>
                             <td>첨단융합 24</td>
                             <td>초대 회장</td>
                         </tr>
                         <tr>
+                            <td><img src="https://via.placeholder.com/40" alt="사진" class="profile-thumb"></td>
                             <td>이영희</td>
                             <td>부회장</td>
                             <td>첨단융합 24</td>
                             <td>학술국 겸임</td>
                         </tr>
                         <tr>
+                            <td><img src="https://via.placeholder.com/40" alt="사진" class="profile-thumb"></td>
                             <td>김철수</td>
                             <td>운영위원</td>
                             <td>첨단융합 24</td>
                             <td>대외협력 담당</td>
                         </tr>
-                         <tr>
+                        <tr>
+                            <td><img src="member_park.jpg" onerror="this.src='https://via.placeholder.com/40'" alt="사진" class="profile-thumb"></td>
                             <td>박지민</td>
                             <td>Member</td>
                             <td>첨단융합 24</td>
@@ -324,6 +339,7 @@
 </body>
 
 </html>
+
 
 
 
