@@ -135,6 +135,19 @@
         }
 
         footer { background: #111; color: #888; padding: 40px 5%; text-align: center; margin-top: 50px; }
+
+        /* 부드러운 화면 전환 애니메이션 정의 */
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(10px); /* 아래에서 살짝 위로 올라오는 효과 */
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -361,7 +374,6 @@
                 </table>
             </div>
         </div>
-
     </section>
     
     <footer>
@@ -388,8 +400,8 @@
     </script>
     
 </body>
-
 </html>
+
 
 
 
