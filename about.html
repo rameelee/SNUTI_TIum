@@ -11,7 +11,52 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
         body { color: var(--text-dark); background: #fff; }
         a { text-decoration: none; color: inherit; }
-
+		/* 원준이가 추가한 부분 시작 - 2026.03.03. */
+		/* 드롭다운 메뉴 스타일 */
+		nav ul li {
+		    position: relative; /* 하위 메뉴의 기준점 */
+		}
+		
+		/* 드롭다운 박스 숨김 상태 */
+		.dropdown-menu {
+		    display: none;
+		    position: absolute;
+		    top: 100%;
+		    left: 50%;
+		    transform: translateX(-50%); /* 중앙 정렬 */
+		    background: white;
+		    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+		    border-radius: 10px;
+		    padding: 10px 0;
+		    min-width: 160px;
+		    z-index: 2000;
+		    border: 1px solid #eee;
+		}
+		
+		/* 마우스 올렸을 때 보이기 */
+		nav ul li:hover .dropdown-menu {
+		    display: block;
+		}
+		
+		/* 드롭다운 링크 스타일 */
+		.dropdown-menu li {
+		    display: block;
+		    margin: 0;
+		}
+		.dropdown-menu a {
+		    display: block;
+		    padding: 10px 20px;
+		    font-size: 0.9rem;
+		    color: var(--text-dark);
+		    font-weight: 500;
+		    text-align: center;
+		    white-space: nowrap; /* 줄바꿈 방지 */
+		}
+		.dropdown-menu a:hover {
+		    background: var(--bg-light);
+		    color: var(--primary-color);
+		}
+		
         /* 헤더 스타일 */
         header { padding: 20px 5%; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: white; z-index: 1000; }
         .logo { font-weight: 800; color: var(--primary-color); font-size: 1.5rem; }
@@ -62,11 +107,76 @@
 		    font-size: 0.85rem; color: #888; margin: 0 10px; text-decoration: underline;
 		}
 		.related-sites a:hover { color: white; }
+
+		/* 원준이가 추가한 부분 시작 - 2026.03.03. */
+		/* [모바일 전용 스타일 - 헤더 및 전체 레이아웃 수정] */
+		@media (max-width: 768px) {
+		    /* 1. 전체 틀: 가로 넘침 방지 */
+		    html, body {
+		        overflow-x: hidden;
+		        width: 100%;
+		    }
+		
+		    /* 2. 헤더: 세로 배치 및 정렬 수정 */
+		    header { 
+		        flex-direction: column; /* 로고와 메뉴를 위아래로 배치 */
+		        align-items: center;
+		        gap: 15px; /* 로고와 메뉴 사이 간격 */
+		        padding: 15px 5%; 
+		    }
+		
+		    /* 로고 크기 모바일 최적화 */
+		    .logo-img {
+		        height: 40px; /* PC보다 조금 작게 줄임 */
+		    }
+		
+		    /* 메뉴 리스트: 화면 밖으로 나가지 않게 수정 */
+		    nav ul { 
+		        display: flex;
+		        justify-content: center; /* 가운데 정렬 */
+		        flex-wrap: wrap; /* [핵심] 공간이 부족하면 자동으로 줄바꿈 */
+		        gap: 15px; /* 메뉴 사이 간격을 40px -> 15px로 대폭 줄임 */
+		        width: 100%;
+		    }
+		
+		    /* 메뉴 글자 크기 조절 */
+		    nav a {
+		        font-size: 0.95rem;
+		        white-space: nowrap; /* 글자가 애매하게 줄바꿈되지 않게 함 */
+		    }
+			* 4. 기타 섹션 */
+		    .about-container { flex-direction: column; }
+		    .activities-grid { grid-template-columns: 1fr; }
+		    .btn { padding: 12px 30px; font-size: 1rem; }
+		}
+		/* 원준이가 추가한 부분 끝 - 2026.03.03. */
+		
     </style>
 </head>
 <body>
 
     <header>
+		<a href="index.html" class="logo-link">
+	<img src="한글4A.png" alt="TI:um Logo" class="logo-img">
+        </a>
+
+        <nav>
+		    <ul>
+		        <li>
+		            <a href="about.html">About</a>
+		            <ul class="dropdown-menu">
+		                <li><a href="about.html#Greetings">Greetings</a></li>
+						<li><a href="about.html#About">About</a></li>
+		                <li><a href="about.html#Leadership Principles">Leadership Principles</a></li>
+		                <li><a href="about.html#talent">Core Values and Talent</a></li>
+		            </ul>
+				</li>
+		        <li><a href="#activities">Activities</a></li>
+		        <li><a href="members.html">Members</a></li>
+		        <li><a href="#contact">Contact</a></li>
+		    </ul>
+		</nav>
+		
         <div style="display:flex; align-items:center;">
             <a href="index.html" class="back-btn">← Home</a>
             <span class="logo">About TI:um</span>
