@@ -277,9 +277,6 @@
             </select>
         </div>
 
-        <div id="gen1" class="gen-group.active">
-        </div>
-
         <div id="gen1" class="gen-group">
             <div class="archive-list">
                 <h3>제1기 티:움 Members</h3>
@@ -292,7 +289,7 @@
                         <tr>
                             <th style="width: 10%;">사진</th> 
                             <th style="width: 20%;">이름</th>
-                            <th style="width: 20%;">당시 직책</th>
+                            <th style="width: 20%;">직책</th>
                             <th style="width: 25%;">전공/학번</th>
                             <th>비고</th>
                         </tr>
@@ -577,7 +574,7 @@
         function changeGeneration() {
             // 1. 선택된 값(value) 가져오기 (예: "gen1")
             var selectedValue = document.getElementById("genSelect").value;
-            
+            /* getElementById returns only the first one, so be aware. */
             // 2. 모든 기수 목록 숨기기
             var groups = document.querySelectorAll('.gen-group');
             groups.forEach(function(group) {
@@ -594,6 +591,7 @@
     
 </body>
 </html>
+
 
 
 
