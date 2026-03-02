@@ -106,9 +106,10 @@
         }
         
         .archive-table {
-            width: 100%;
+            width: auto;              /* let it shrink */
             border-collapse: collapse;
             text-align: left;
+            table-layout: auto;       /* content decides width */
         }
         .archive-table th {
             border-bottom: 2px solid var(--primary-color);
@@ -593,6 +594,7 @@
     
 </body>
 </html>
+
 
 
 
